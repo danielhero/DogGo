@@ -428,3 +428,5 @@ C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\staticwebassets\Do
 C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\DogGo.dll
 C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\DogGo.pdb
 C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\DogGo.genruntimeconfig.cache
+C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\DogGo.csprojAssemblyReference.cache
+C:\Users\Daniel\workspace\DogGo\DogGo\obj\Debug\netcoreapp3.1\Razor\Views\Owners\Login.cshtml.g.cs
