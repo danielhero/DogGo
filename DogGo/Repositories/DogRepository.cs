@@ -1,4 +1,5 @@
-﻿using DogGo.Models;
+﻿using Doggo.Utils;
+using DogGo.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -178,6 +179,7 @@ namespace DogGo.Repositories
                 {
                     cmd.CommandText = @"
             INSERT INTO Dog (Name, Breed, OwnerId, Notes, ImageUrl)
+            OUTPUT INSERTED.ID
             VALUES (@name, @breed, @ownerId, @notes, @imageUrl)
             ";
 
@@ -186,8 +188,8 @@ namespace DogGo.Repositories
                     cmd.Parameters.AddWithValue("@ownerId", dog.OwnerId);
 
                     // nullable columns
-                    cmd.Parameters.AddWithValue("@notes", dog.Notes ?? "");
-                    cmd.Parameters.AddWithValue("@imageUrl", dog.ImageUrl ?? "");
+                    cmd.Parameters.AddWithValue("@notes", SQLHelpers.GetNullableParam(dog.Notes));
+                    cmd.Parameters.AddWithValue("@imageUrl", SQLHelpers.GetNullableParam(dog.ImageUrl));
 
                     int newlyCreatedId = (int)cmd.ExecuteScalar();
 
